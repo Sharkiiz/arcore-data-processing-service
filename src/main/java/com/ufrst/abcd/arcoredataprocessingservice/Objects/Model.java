@@ -19,20 +19,19 @@ public class Model {
     }
 
     public void createModel() {
-        //try {
-            //FileWriter fileWriter = new FileWriter("model"+id+".txt");
+        try {
+            FileWriter fileWriter = new FileWriter("model"+id+".txt");
             for(Plans plans : this.getListPlan()) {
                List<Points> lp = plans.getPoints();
                for(Points point : lp) {
                    String str = "v "+point.getVx()+" "+point.getVy()+" "+point.getVz();
                    System.out.println(str);
-
                }
             }
 
-       /*} catch (IOException e) {
+       } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     public List<Plans> getListPlan() {

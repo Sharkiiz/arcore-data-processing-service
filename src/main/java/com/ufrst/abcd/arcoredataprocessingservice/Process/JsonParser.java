@@ -29,14 +29,14 @@ public class JsonParser {
                 if (arrNodePoints.isArray()) {
                     List<Points> listPoints = new ArrayList<>();
                     for (final JsonNode objPoint : arrNodePoints) {
-                        int idPoint = objPoint.get("idp").asInt();
-                        double vx = objPoint.get("vx").asDouble();
-                        double vy = objPoint.get("vy").asDouble();
-                        double vz = objPoint.get("vz").asDouble();
-                        double vnx = objPoint.get("vnx").asDouble();
-                        double vny = objPoint.get("vny").asDouble();
-                        double vnz = objPoint.get("vnz").asDouble();
-                        Points point = new Points(idPoint, vx, vy,vz,vnx,vny,vnz); //on creer le point
+                        Points point = new Points(
+                                objPoint.get("idp").asInt(),
+                                objPoint.get("vx").asDouble(),
+                                objPoint.get("vy").asDouble(),
+                                objPoint.get("vz").asDouble(),
+                                objPoint.get("vnx").asDouble(),
+                                objPoint.get("vny").asDouble(),
+                                objPoint.get("vnz").asDouble());
                         listPoints.add(point);
                     }
                     i++;

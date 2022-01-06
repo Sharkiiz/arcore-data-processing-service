@@ -35,3 +35,6 @@ build/
 ###MVN###
 .mvn
 .mvn/wrapper
+
+###Model###
+model*.txt
