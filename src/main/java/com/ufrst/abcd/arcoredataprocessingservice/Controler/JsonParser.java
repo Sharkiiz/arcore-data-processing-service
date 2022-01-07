@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Model;
-import com.ufrst.abcd.arcoredataprocessingservice.Objects.Plans;
+import com.ufrst.abcd.arcoredataprocessingservice.Objects.Plane;
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Points;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class JsonParser {
             int nbPlan = 0;
             int i = 0;
             for (final JsonNode objPlans : arrNodePlans) {
-                int idPlan = objPlans.get("idP").asInt();
+                int idPlane = objPlans.get("idP").asInt();
                 final JsonNode arrNodePoints = new ObjectMapper().readTree(body).get("plans").get(i).get("Points");
                 if (arrNodePoints.isArray()) {
                     List<Points> listPoints = new ArrayList<>();
@@ -40,7 +40,7 @@ public class JsonParser {
                         listPoints.add(point);
                     }
                     i++;
-                    model.add(new Plans(idPlan, listPoints));
+                    model.add(new Plane(idPlane, listPoints));
                     nbPlan++;
                 }
             }

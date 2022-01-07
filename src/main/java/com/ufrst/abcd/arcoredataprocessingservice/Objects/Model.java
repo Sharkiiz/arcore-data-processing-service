@@ -8,15 +8,15 @@ import java.util.List;
 
 public class Model {
 
-    private List<Plans> listPlan = new ArrayList<>();
+    private List<Plane> listPlane = new ArrayList<>();
     private int id;
 
     public Model(int id) {
         this.id = id;
     }
 
-    public void add(Plans plan) {
-        listPlan.add(plan);
+    public void add(Plane plane) {
+        listPlane.add(plane);
     }
 
     public void createModel() {
@@ -24,8 +24,8 @@ public class Model {
             //modifier pour mettre les models dans un repertoire spécifique + delete le contenue si jamais il y a quelque chose dedans
             File file = new File("model"+id+".txt");
             FileWriter fileWriter = new FileWriter(file, true);
-            for(Plans plan : this.getListPlan()) {
-               List<Points> lp = plan.getListPoints();
+            for(Plane plane : this.getListPlane()) {
+               List<Points> lp = plane.getListPoints();
                for(Points point : lp) {
                    String str = "v "+point.getVx()+" "+point.getVy()+" "+point.getVz()+"\n";
                    fileWriter.write(str);
@@ -41,8 +41,8 @@ public class Model {
         }
     }
 
-    public List<Plans> getListPlan() {
-        return this.listPlan;
+    public List<Plane> getListPlane() {
+        return this.listPlane;
     }
 
     public int getId() {

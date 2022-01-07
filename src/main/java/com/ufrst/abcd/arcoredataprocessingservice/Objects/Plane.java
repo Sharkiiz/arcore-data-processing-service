@@ -2,13 +2,13 @@ package com.ufrst.abcd.arcoredataprocessingservice.Objects;
 
 import java.util.List;
 
-public class Plans {
+public class Plane {
 
     private int idP;
 
     private List<Points> listPoints;
 
-    public Plans(int idP, List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> points) {
+    public Plane(int idP, List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> points) {
         this.idP = idP;
         listPoints = points;
     }
