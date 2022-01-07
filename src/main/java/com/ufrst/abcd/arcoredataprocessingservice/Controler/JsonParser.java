@@ -1,4 +1,4 @@
-package com.ufrst.abcd.arcoredataprocessingservice.Process;
+package com.ufrst.abcd.arcoredataprocessingservice.Controler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -15,10 +15,10 @@ public class JsonParser {
     public static void parse(String body) throws JsonProcessingException {
         final JsonNode nodeModel = new ObjectMapper().readTree(body).get("model");
         int idModel = nodeModel.asInt();
-        if (!ModelCreator.getListModel().containsKey(idModel)) {
-            ModelCreator.addModel(idModel, new Model(idModel));
+        if (!ModelManager.getListModel().containsKey(idModel)) {
+            ModelManager.addModel(idModel, new Model(idModel));
         }
-        Model model = ModelCreator.getModelById(idModel);
+        Model model = ModelManager.getModelById(idModel);
         final JsonNode arrNodePlans = new ObjectMapper().readTree(body).get("plans"); //pointeur sur les objts plans
         if (arrNodePlans.isArray()) {
             int nbPlan = 0;

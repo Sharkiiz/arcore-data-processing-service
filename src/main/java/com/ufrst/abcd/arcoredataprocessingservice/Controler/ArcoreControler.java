@@ -2,9 +2,7 @@ package com.ufrst.abcd.arcoredataprocessingservice.Controler;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.ufrst.abcd.arcoredataprocessingservice.Process.JsonParser;
 
-import com.ufrst.abcd.arcoredataprocessingservice.Process.ModelCreator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +19,7 @@ public class ArcoreControler {
 
     @PostMapping("api/v1/createModel")
     ResponseEntity createModel(@RequestBody String body) {
-        ModelCreator.getModelById(Integer.parseInt(body)).createModel();
+        ModelManager.getModelById(Integer.parseInt(body)).createModel();
         return new ResponseEntity("Creating model in progress", HttpStatus.OK);
     }
 

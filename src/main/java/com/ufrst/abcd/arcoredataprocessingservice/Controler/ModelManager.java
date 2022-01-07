@@ -1,4 +1,4 @@
-package com.ufrst.abcd.arcoredataprocessingservice.Process;
+package com.ufrst.abcd.arcoredataprocessingservice.Controler;
 
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Model;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ModelCreator {
+public class ModelManager {
 
     private static Map<Integer,Model> listModel = new HashMap<>();
 

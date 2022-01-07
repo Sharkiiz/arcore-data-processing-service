@@ -1,5 +1,6 @@
 package com.ufrst.abcd.arcoredataprocessingservice.Objects;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,15 +21,21 @@ public class Model {
 
     public void createModel() {
         try {
-            FileWriter fileWriter = new FileWriter("model"+id+".txt");
-            for(Plans plans : this.getListPlan()) {
-               List<Points> lp = plans.getPoints();
+            //modifier pour mettre les models dans un repertoire spécifique + delete le contenue si jamais il y a quelque chose dedans
+            File file = new File("model"+id+".txt");
+            FileWriter fileWriter = new FileWriter(file, true);
+            for(Plans plan : this.getListPlan()) {
+               List<Points> lp = plan.getListPoints();
                for(Points point : lp) {
-                   String str = "v "+point.getVx()+" "+point.getVy()+" "+point.getVz();
-                   System.out.println(str);
+                   String str = "v "+point.getVx()+" "+point.getVy()+" "+point.getVz()+"\n";
+                   fileWriter.write(str);
                }
+               StringBuilder sb = new StringBuilder("f ");
+               int i = 0;
+               sb.append(lp.get(i).getIdp()).append(" ").append(lp.get(i + 1).getIdp()).append(" ").append(lp.get(i + 2).getIdp()).append(" ").append(lp.get(i + 3).getIdp()).append("\n");
+               fileWriter.write(sb.toString());
             }
-
+            fileWriter.close();
        } catch (IOException e) {
             e.printStackTrace();
         }

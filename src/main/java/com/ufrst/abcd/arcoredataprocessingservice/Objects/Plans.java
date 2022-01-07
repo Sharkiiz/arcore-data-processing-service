@@ -6,11 +6,11 @@ public class Plans {
 
     private int idP;
 
-    private List<Points> Points;
+    private List<Points> listPoints;
 
     public Plans(int idP, List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> points) {
         this.idP = idP;
-        Points = points;
+        listPoints = points;
     }
 
     public int getIdP() {
@@ -21,11 +21,11 @@ public class Plans {
         this.idP = idP;
     }
 
-    public List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> getPoints() {
-        return Points;
+    public List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> getListPoints() {
+        return listPoints;
     }
 
-    public void setPoints(List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> points) {
-        Points = points;
+    public void setPoints(List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> listPoints) {
+        this.listPoints = listPoints;
     }
 }
