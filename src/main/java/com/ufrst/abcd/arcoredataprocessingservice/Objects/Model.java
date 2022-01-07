@@ -44,8 +44,4 @@ public class Model {
     public List<Plane> getListPlane() {
         return this.listPlane;
     }
-
-    public int getId() {
-        return id;
-    }
 }

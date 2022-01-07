@@ -19,13 +19,12 @@ public class JsonParser {
             ModelManager.addModel(idModel, new Model(idModel));
         }
         Model model = ModelManager.getModelById(idModel);
-        final JsonNode arrNodePlans = new ObjectMapper().readTree(body).get("plans"); //pointeur sur les objts plans
-        if (arrNodePlans.isArray()) {
-            int nbPlan = 0;
+        final JsonNode arrNodePlanes = new ObjectMapper().readTree(body).get("Planes"); //pointeur sur les objts plans
+        if (arrNodePlanes.isArray()) {
             int i = 0;
-            for (final JsonNode objPlans : arrNodePlans) {
-                int idPlane = objPlans.get("idP").asInt();
-                final JsonNode arrNodePoints = new ObjectMapper().readTree(body).get("plans").get(i).get("Points");
+            for (final JsonNode objPlane : arrNodePlanes) {
+                int idPlane = objPlane.get("idP").asInt();
+                final JsonNode arrNodePoints = new ObjectMapper().readTree(body).get("Planes").get(i).get("Points");
                 if (arrNodePoints.isArray()) {
                     List<Points> listPoints = new ArrayList<>();
                     for (final JsonNode objPoint : arrNodePoints) {
@@ -41,35 +40,9 @@ public class JsonParser {
                     }
                     i++;
                     model.add(new Plane(idPlane, listPoints));
-                    nbPlan++;
                 }
             }
-            System.out.println("Il y a " + nbPlan + " plans dans cette requete");
         }
     }
 }
-
-
-        /*
-        JSONArray jsonPlansArray = nodePlans.;
-        List<Plans> listPlans = new ArrayList<>();
-        for (int i = 0; i < jsonPlansArray.length(); i++) {
-            List<Points> listPoints = new ArrayList<>();
-            JSONObject jsonPlan = jsonPlansArray.getJSONObject(i);
-            JSONArray jsonPoints = jsonPlan.getJSONArray("Points");
-            for (int y = 0; y < jsonPoints.length(); y++) {
-                JSONObject jsonPoint = jsonPoints.getJSONObject(y);
-                Points point = new Points(jsonPoint.getInt("idp"), jsonPoint.getDouble("texture"), jsonPoint.getDouble("normal"));
-                listPoints.add(point);
-            }
-            int idPlan = jsonPlan.getInt("idP");
-            Plans plan = new Plans(idPlan, listPoints);
-            //demande un id pour le model afin d'ajouter les datas au bon model
-            listPlans.add(plan);*/
-
-            /*
-            if (ModelCreator.get(l 'id du model').existe()){
-                modelcreator.get(i).add(listPlans);
-            }
-            Model model = new Model(id, listPlans);*/
 

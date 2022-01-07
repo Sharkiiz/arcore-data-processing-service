@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class ArcoreControler {
 
-    @PostMapping("/api/v1/parsePlans")
+    @PostMapping("/api/v1/parsePlanes")
     ResponseEntity parseModele(@RequestBody String body) throws JsonProcessingException {
         JsonParser.parse(body);
         System.currentTimeMillis();

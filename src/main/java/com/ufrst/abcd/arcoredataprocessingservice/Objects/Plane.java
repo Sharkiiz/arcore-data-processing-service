@@ -13,19 +13,8 @@ public class Plane {
         listPoints = points;
     }
 
-    public int getIdP() {
-        return idP;
-    }
-
-    public void setIdP(int idP) {
-        this.idP = idP;
-    }
-
     public List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> getListPoints() {
         return listPoints;
     }
 
-    public void setPoints(List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> listPoints) {
-        this.listPoints = listPoints;
-    }
 }
