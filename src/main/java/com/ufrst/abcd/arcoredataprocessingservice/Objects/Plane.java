@@ -8,12 +8,12 @@ public class Plane {
 
     private List<Points> listPoints;
 
-    public Plane(int idP, List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> points) {
+    public Plane(int idP, List<Points> points) {
         this.idP = idP;
         listPoints = points;
     }
 
-    public List<com.ufrst.abcd.arcoredataprocessingservice.Objects.Points> getListPoints() {
+    public List<Points> getListPoints() {
         return listPoints;
     }
 
