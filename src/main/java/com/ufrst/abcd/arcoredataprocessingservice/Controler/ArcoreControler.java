@@ -20,7 +20,8 @@ public class ArcoreControler {
     @PostMapping("api/v1/createModel")
     ResponseEntity createModel(@RequestBody String body) {
         ModelManager.getModelById(Integer.parseInt(body)).createModel();
-        return new ResponseEntity("Creating model in progress", HttpStatus.OK);
+        System.currentTimeMillis();
+        return new ResponseEntity("Creating model"+Integer.parseInt(body)+" in progress", HttpStatus.OK);
     }
 
 }

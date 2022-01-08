@@ -32,7 +32,7 @@ public class Model {
                }
                StringBuilder sb = new StringBuilder("f ");
                int i = 0;
-               sb.append(lp.get(i).getIdp()).append(" ").append(lp.get(i + 1).getIdp()).append(" ").append(lp.get(i + 2).getIdp()).append(" ").append(lp.get(i + 3).getIdp()).append("\n");
+               sb.append(lp.get(i).getIdp()).append(" ").append(lp.get(i+1).getIdp()).append(" ").append(lp.get(i+2).getIdp()).append(" ").append(lp.get(i+3).getIdp()).append("\n");
                fileWriter.write(sb.toString());
             }
             fileWriter.close();
