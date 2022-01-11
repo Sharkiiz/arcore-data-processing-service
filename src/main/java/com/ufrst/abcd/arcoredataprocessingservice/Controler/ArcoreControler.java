@@ -23,5 +23,4 @@ public class ArcoreControler {
         System.currentTimeMillis();
         return new ResponseEntity("Creating model"+Integer.parseInt(body)+" in progress", HttpStatus.OK);
     }
-
 }
