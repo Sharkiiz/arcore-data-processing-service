@@ -9,10 +9,10 @@ import java.util.List;
 public class Model {
 
     private List<Plane> listPlane = new ArrayList<>();
-    private int id;
+    private int idM;
 
     public Model(int id) {
-        this.id = id;
+        this.idM = id;
     }
 
     public void add(Plane plane) {
@@ -22,11 +22,11 @@ public class Model {
     public void createModel() {
         try {
             //modifier pour mettre les models dans un repertoire spécifique + delete le contenue si jamais il y a quelque chose dedans
-            File file = new File("model"+id+".txt");
+            File file = new File("model"+idM+".txt");
             FileWriter fileWriter = new FileWriter(file, true);
             for(Plane plane : this.getListPlane()) {
-               List<Points> lp = plane.getListPoints();
-               for(Points point : lp) {
+               List<Point> lp = plane.getListPoints();
+               for(Point point : lp) {
                    String str = "v "+point.getVx()+" "+point.getVy()+" "+point.getVz()+"\n";
                    fileWriter.write(str);
                }

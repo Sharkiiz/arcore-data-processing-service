@@ -6,14 +6,14 @@ public class Plane {
 
     private int idP;
 
-    private List<Points> listPoints;
+    private List<Point> listPoints;
 
-    public Plane(int idP, List<Points> points) {
+    public Plane(int idP, List<Point> points) {
         this.idP = idP;
         listPoints = points;
     }
 
-    public List<Points> getListPoints() {
+    public List<Point> getListPoints() {
         return listPoints;
     }
 

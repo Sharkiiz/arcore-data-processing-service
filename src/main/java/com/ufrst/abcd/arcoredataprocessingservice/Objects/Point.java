@@ -1,6 +1,6 @@
 package com.ufrst.abcd.arcoredataprocessingservice.Objects;
 
-public class Points {
+public class Point {
 
     private int idp;
     private double vx;
@@ -10,7 +10,7 @@ public class Points {
     private double vny;
     private double vnz;
 
-    public Points(int idp, double vx, double vy, double vz, double vnx, double vny, double vnz) {
+    public Point(int idp, double vx, double vy, double vz, double vnx, double vny, double vnz) {
         this.idp = idp;
         this.vx = vx;
         this.vy = vy;
