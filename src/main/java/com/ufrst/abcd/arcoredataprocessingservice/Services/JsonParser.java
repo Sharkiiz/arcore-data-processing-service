@@ -3,7 +3,7 @@ package com.ufrst.abcd.arcoredataprocessingservice.Services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ufrst.abcd.arcoredataprocessingservice.Repository.ModelManager;
+import com.ufrst.abcd.arcoredataprocessingservice.Model.ModelManager;
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Model;
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Plane;
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Point;

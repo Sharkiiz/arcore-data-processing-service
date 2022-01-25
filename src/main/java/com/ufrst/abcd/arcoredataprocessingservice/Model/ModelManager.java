@@ -1,4 +1,4 @@
-package com.ufrst.abcd.arcoredataprocessingservice.Repository;
+package com.ufrst.abcd.arcoredataprocessingservice.Model;
 
 import com.ufrst.abcd.arcoredataprocessingservice.Objects.Model;
 

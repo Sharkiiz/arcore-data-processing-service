@@ -3,7 +3,7 @@ package com.ufrst.abcd.arcoredataprocessingservice.Controler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import com.ufrst.abcd.arcoredataprocessingservice.Repository.ModelManager;
+import com.ufrst.abcd.arcoredataprocessingservice.Model.ModelManager;
 import com.ufrst.abcd.arcoredataprocessingservice.Services.JsonParser;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
